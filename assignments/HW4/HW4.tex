@@ -1,0 +1,34 @@
+\documentclass[12pt]{amsart}
+\usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
+\geometry{a4paper} % or letter or a5paper or ... etc
+
+\begin{document}
+\begin{enumerate}
+\item Study the other examples as listed in pp. 161, and discuss in each case, why it is more natural to use threads. \\
+\begin{enumerate}
+\item Foreground and background work: This way is more natural with threads than processes because threads are faster at the transferring of information. 
+\item Asynchronous processing: If a process were to do this, the program would have to stop every time it went to save. Using a thread lets the main process continue and execute the save discretely.
+\item Speed of execution: Threads make more sense here because using processes are very slow. To spawn a new process would take both a multiprocessor and the memory for it.
+\item Modular Program Structure: Programs that use multiple threads will run, on average, faster and with more efficiency than a program that uses different processes.\\
+\end{enumerate}
+\item Problem 4.1\\
+A mode switch between threads in the same process requires less work, and memory than threads across processes.\\
+\item problem 4.2 \\
+The thread(s) are blocked because the operating system doesn't know they are they. This means that the OS can't execute them.\\
+\item problem 4.4 \\
+This model makes multithreaded programs run faster than their single-threaded counterparts because no processes are blocked. The processor can easily transition from one thread to the next.\\
+\item problem 4.5 \\
+No, the process exits, and the threads are destroyed.\\
+\item Check out the application example of the Valve Game software, and send in a report on why and how a multi-core system is effectively used in this application.\\
+
+In valve's steam client, it must effectively run the store, web browser, and chat client. This means that it must use a threaded process in order to keep the program running quickly, and without hogging all of the system memory. \\
+\item Self-study ¤4.5 on Solaris thread and SMP management.\\
+\item Problem 4.7 \\
+\begin{enumerate}
+\item The program creates a list p. It then cycles though the list, and for every positive value, it increments the global positives.
+\item The threads shouldn't execute in parallel on a single-thread execution. They could run into a resource sharing issue. \\
+\end{enumerate}
+\item Problem 4.8.\\
+If A and B are run concurrently, then the global positives could increment without the value being positive.
+\end{enumerate}
+\end{document}

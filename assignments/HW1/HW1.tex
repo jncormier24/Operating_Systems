@@ -1,0 +1,35 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+\usepackage{amssymb}
+\def\MLine#1{\par\hspace*{-\leftmargin}\parbox{\textwidth}{\[#1\]}}
+
+\begin{document}
+\begin{enumerate}
+\item Problem  1.1
+\item Problem 1.2
+\begin{enumerate}
+\item The PC contains 300, and the address of the first instruction. This address is then given to the MAR, so that the value in 300 may be loaded to the MBR, and subsequently loaded into the IR. The PC is then incremented. 
+\item The first 4 bits in the IR indicate that the AC is to be loaded from memory. The remaining 12 bits are the address which is to be loaded from. The address is then given to the MAR, and the contents of the address are written to the MBR, which are then written to the AC.
+\item 301 is then given to the MAR, and the instruction is loaded into the MBR, and written to the IR. 
+\item The next instruction says to add the contents of the next memory address to the AC, so the address is given to the MAR, and the contents are given to the MBR. The contents are then added to the AC, and are put back in the AC.
+\item The next location is given to the MAR, and the instruction is written to the MBR, which then writes the instruction to the IR. 
+\item The memory address of the instruction is given to the MAR, and the contents of the AC are written to the MBR, and the written to the memory address in the MAR.
+\end{enumerate}
+\item Problem 1.7\\
+The DMA is given priority to main memory over the processor because the process of moving blocks of data should not be interrupted, else errors may occur. In order to ensure there is no interrupt issued, the DMA must have priority over the processor.
+\item Problem 1.10. 
+\begin{enumerate}
+\item the line: $a[i] = a[i] * j$ is an example of spatial locality, because it involves the storage of blobs in succession
+\item the two 'for' loops are examples of temporal locality, because they repeat the same instruction several times
+\end{enumerate}
+\item Problem 1.11
+\begin{enumerate}
+\item equation 1.1 : 
+\item equation 1.2 :  $C_s = \frac{\Sigma C_nS_n}{\Sigma S_n}$ 
+\end{enumerate}
+\item Problem 1.14\\
+In a stack architecture, the PC can be substituted with the top of the stack. The top of the stack will act as the PC, and popping the top off the stack will be the same as moving the instruction from the PC to the IR. 
+\end{enumerate}
+\end{document}  
