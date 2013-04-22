@@ -7,7 +7,10 @@
  * Cars move at 15mph
  * */
 import java.util.*;
+<<<<<<< HEAD
 import java.util.concurrent.Semaphore;
+=======
+>>>>>>> 0e5ac5a248d33fd0662c0344fc66fae91345506f
 
 public class project3{
 	
@@ -22,6 +25,7 @@ public class project3{
 	Tunnel tunnel = new Tunnel( false );
 	int cases = 1000;
 	public static void main(String[] args){
+<<<<<<< HEAD
 		new project3();		
 	}
 	
@@ -113,6 +117,136 @@ class Car {
 	}
 	public int getDuration(){
 		return this.duration;
+=======
+		int carsLeft = 0;
+		int sendNorth = 0;
+		int fromNorth = 0;
+		int sendSouth = 0;
+		int fromSouth = 0;
+		Light northLight = new Light( "Red" );
+		Light southLight = new Light( "Red" );
+		boolean tunnel = false;
+		int cases = 5000;
+		long totalTime = 0;
+		long avgTime = 0;
+		System.out.println("Traffic Monitor.");
+		while( 0 < cases  ){
+			long startTime = System.nanoTime();
+			int dir = (int)(Math.random() * 2);
+			if( 1 == dir ){
+				sendSouth++;
+			}
+			else if(0 == dir){
+				sendNorth++;
+			}
+			if( false == tunnel ){
+				if( "Red" == northLight.status && "Red" == southLight.status ){
+					//critical section
+					if( 0 < sendSouth ){
+						southLight.status = "Green";
+						northLight.status = "Red";
+						sendSouth--;
+						fromNorth++;
+						tunnel = true;
+					}
+					//critical section
+					else{
+						northLight.status = "Green";
+						southLight.status = "Red";
+						sendNorth--;
+						fromSouth++;
+						tunnel = true;
+					}
+				}
+				else if( "Green" == northLight.status && "Red" == southLight.status ){
+					//critical section
+					if( 0 < sendSouth ){
+						southLight.status = "Green";
+						northLight.status = "Red";
+						sendSouth--;
+						fromNorth++;
+						tunnel = true;
+					}
+					//critical section
+					else{
+						northLight.status = "Green";
+						southLight.status = "Red";
+						sendNorth--;
+						fromSouth++;
+						tunnel = true;
+					}
+				}
+				else if( "Red" == northLight.status && "Green" == southLight.status ){
+					//critical section
+					if( 0 < sendNorth ){
+						southLight.status = "Green";
+						northLight.status = "Red";
+						sendNorth--;
+						fromSouth++;
+						tunnel = true;
+					}
+					//critical section
+					else{
+						northLight.status = "Green";
+						southLight.status = "Red";
+						sendSouth--;
+						fromNorth++;
+						tunnel = true;
+					}
+				}
+			}
+			else if( true == tunnel ){
+				if( "Green" == northLight.status && "Red" == southLight.status ){
+					//critical section
+					if( 0 < sendSouth ){
+						southLight.status = "Green";
+						northLight.status = "Red";
+						sendSouth--;
+						fromNorth++;
+						tunnel = true;
+					}
+					else{
+						tunnel = false;
+					}
+				}
+				else if( "Red" == northLight.status && "Green" == southLight.status ){
+					if( 0 < sendNorth ){
+						tunnel = false;
+					}
+					//critical section
+					else{
+						northLight.status = "Green";
+						southLight.status = "Red";
+						sendSouth--;
+						fromNorth++;
+						tunnel = true;
+					}
+				}
+			}
+			long endTime = System.nanoTime() - startTime;
+			totalTime += endTime;
+			cases--;
+			//System.out.println("The trip took "+endTime+" milliseconds.");
+		}
+		avgTime = totalTime / 5000;
+		System.out.println("The average trip took: "+avgTime+" milliseconds.");
+		System.out.println("There were "+fromNorth+" cars that traveled south.");
+		System.out.println("There were "+fromSouth+" cars that traveled north.");
+	}
+}
+
+class Light {
+	String status;
+	
+	public Light( String status){
+		this.status = status;
+	}
+	public void setStatus( String status ){
+		this.status = status;
+	}
+	public String getStatus(){
+		return this.status;
+>>>>>>> 0e5ac5a248d33fd0662c0344fc66fae91345506f
 	}
 }
 
