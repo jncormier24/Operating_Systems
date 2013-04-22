@@ -3,5 +3,47 @@
 \geometry{a4paper} % or letter or a5paper or ... etc
 
 \begin{document}
-Document here...
+Problem 5.1.\\
+\begin{enumerate}
+\item A multiprogramming system uses only one processor, so the resources are split differently than they would be on a multiprocessing system.
+\item Because a multiprogramming system has only one processor, current items run semi-concurrent, meaning they must run mostly offset of one another, unless strictly running the same command.
+\end{enumerate}
+
+Problem 5.3(a)\\
+\begin{enumerate}
+\item P1: shared int x;
+\item P2: shared int x;
+\item P1: x = 10;
+\item P2: x = 10;
+\item P1: while ...
+\indent The P1 while loop will execute "infinitely", not letting the P2 ever execute. This is where "x is 10" is printed\\
+\end{enumerate}
+Question from the chapter: \\
+\indent The exchange instruction will only let one of two options control the processor, but not both. Whichever option is picked, the other is blocked.\\
+
+Problem 5.5.\\
+\indent Busy waiting will always be less efficient than blocking wait because the processor is continually spinning during a busy wait.\\
+
+Problem 5.7
+\begin{enumerate}
+\item part a: \\
+\indent The program initializes two arrays, a boolean choosing of size n and integer number of size n. We then enter an infinite loop; index i of choosing is set to true, then index i of number is set equal to one more than either the length of the number array or n. Choosing is then set back to false, signaling the end of the write. \\
+\item part b: \\
+
+\end{enumerate}
+
+Problem 5.8.\\
+\indent This program does not violate mutual exclusion. \\
+
+Self-study ¤5.5
+\begin{enumerate}
+\item The system accomplishes synchronization in this way: an instruction may not execute until it is received and cannot be sent until the proper resources are available to execute it.
+\item A message may only be passed if there is no blocking occurring. If there is no mutual exclusion, then there is blocking. \\
+\end{enumerate}
+
+Problem 5.19.\\
+
+Draw a similar Þgure as in Table 5.4 to show, with the revised code, the
+problem as discussed has been solved.\\
+
 \end{document}

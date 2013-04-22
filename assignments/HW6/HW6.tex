@@ -1,0 +1,51 @@
+\documentclass[12pt]{amsart}
+\usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
+\usepackage{amsmath}
+\usepackage{mathtools}
+\geometry{a4paper} % or letter or a5paper or ... etc
+
+\begin{document}
+
+Problem 6.1 \\
+\begin{enumerate}
+\item Mutual Exclusion: Only one car may move at a time.
+\item Hold and Wait: Because only one car may move at a time, the other cars must wait. Because no car can go first, they must all wait.
+\item Preemption: There is no light to tell which car to go first.
+\item Circular Wait: All four cars arrived at the same time, so no car has the right of way.
+\end{enumerate}
+
+Problem 6.2 \\ 
+\indent Inserting a round-a-bout instead of a four-way-stop will both prevent and avoid the issue. \\
+
+Problem 6.3 \\
+\begin{enumerate}
+\item Q acquires B and then A and then releases B and A. When P resumes execution, it will be able to acquire both resources
+\item Q acquires B and then A. P executes and blocks on a request for A. Q releases B and A. When P resumes execution, it will be able to acquire both resources.
+\item Q acquires B and then P acquires A. P then releases A. Q acquires A and then releases B and A. When P resumes, it will be able to acquire both A and B.
+\item P acquires A and Q acquires B. P then releases A and Q acquires A and then releases A. P resumes and gets and then releases B.
+\item P Acquires A and then B. Q executes and blocks on a request for B. P releases A and B. When Q resumes execution, it will be able to acquire both resources.
+\item P acquires A and then B and then releases A and B. When Q resumes execution, it will be able to acquire both resources. \\
+\end{enumerate}
+Problem 6.4 \\
+\indent If a process does not need a resource, it will let go of that resource such that two processes can't fight over it. \\
+
+\newpage
+
+Problem 6.5 \\
+\begin{enumerate}
+\item True
+\item $\begin{matrix}
+Process & A & B & C & D \\
+P0 & 7 & 5 & 3 & 4\\
+P1& 2 & 1 & 2 & 2\\
+P2 & 3 & 4 & 4 & 2\\
+P3 & 2 & 3 & 3 & 1\\
+P4 & 4 & 1 & 2 & 3\\
+P5 & 3 & 4 & 3 & 3\\ 
+\end{matrix}$ \\
+\end{enumerate}
+
+Homework: Self-study ¤6.6 and discuss in detail how the Þrst solution leads to a deadlock, while the second prevents it from happening.\\ 
+\indent In the first solution, there is no mutual exclusion, preemption or circular wait. Each philosopher can take more than one fork and they can all take a fork at once. This will lead to dead lock most of the time. The second solution provides that there are an abundance of resources, or that there is a limit on the amount of philosophers (processes) that can be at the table.
+
+\end{document}
