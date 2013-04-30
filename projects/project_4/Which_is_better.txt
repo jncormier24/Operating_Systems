@@ -1,0 +1,91 @@
+Lab 4: Which one is better?
+By: Joe Cormier
+The purpose of this lab is to figure out which algorithm is better, First Come First Server or Round Robbin.
++--------------------------------------------+
+| FCFS turnaround: 244.62494413312294 
+| FCFS wait: 244.59890270893126 
++--------------------------------------------+
+| RR Context: 0 
+| RR quanta: 100 
+| RR turnaround: 244.6249441331228 
+| RR wait: 51.52494413312252 
+| RR quanta: 150 
+| RR turnaround: 244.62494413312274 
+| RR wait: 71.37494413312257 
+| RR quanta: 200 
+| RR turnaround: 244.62494413312268 
+| RR wait: 88.82494413312241 
+| RR quanta: 250 
+| RR turnaround: 244.62494413312277 
+| RR wait: 118.8749441331225 
++--------------------------------------------+
+| RR Context: 5 
+| RR quanta: 100 
+| RR turnaround: 259.2799441331228 
+| RR wait: 66.17994413312252 
+| RR quanta: 150 
+| RR turnaround: 255.39994413312286 
+| RR wait: 82.14994413312263 
+| RR quanta: 200 
+| RR turnaround: 253.5199441331227 
+| RR wait: 97.71994413312248 
+| RR quanta: 250 
+| RR turnaround: 252.13994413312273 
+| RR wait: 126.38994413312247 
++--------------------------------------------+
+| RR Context: 10 
+| RR quanta: 100 
+| RR turnaround: 273.9349441331227 
+| RR wait: 80.83494413312245 
+| RR quanta: 150 
+| RR turnaround: 266.1749441331228 
+| RR wait: 92.9249441331226 
+| RR quanta: 200 
+| RR turnaround: 262.41494413312273 
+| RR wait: 106.61494413312253 
+| RR quanta: 250 
+| RR turnaround: 259.65494413312285 
+| RR wait: 133.90494413312246 
++--------------------------------------------+
+| RR Context: 15 
+| RR quanta: 100 
+| RR turnaround: 288.58994413312263 
+| RR wait: 95.48994413312255 
+| RR quanta: 150 
+| RR turnaround: 276.94994413312276 
+| RR wait: 103.6999441331226 
+| RR quanta: 200 
+| RR turnaround: 271.30994413312277 
+| RR wait: 115.50994413312254 
+| RR quanta: 250 
+| RR turnaround: 267.1699441331229 
+| RR wait: 141.41994413312253 
++--------------------------------------------+
+| RR Context: 20 
+| RR quanta: 100 
+| RR turnaround: 303.2449441331227 
+| RR wait: 110.14494413312254 
+| RR quanta: 150 
+| RR turnaround: 287.7249441331229 
+| RR wait: 114.47494413312255 
+| RR quanta: 200 
+| RR turnaround: 280.20494413312286 
+| RR wait: 124.40494413312251 
+| RR quanta: 250 
+| RR turnaround: 274.6849441331232 
+| RR wait: 148.9349441331226 
++--------------------------------------------+
+| RR Context: 25 
+| RR quanta: 100 
+| RR turnaround: 317.8999441331228 
+| RR wait: 124.79994413312248 
+| RR quanta: 150 
+| RR turnaround: 298.4999441331227 
+| RR wait: 125.2499441331226 
+| RR quanta: 200 
+| RR turnaround: 289.099944133123 
+| RR wait: 133.29994413312238 
+| RR quanta: 250 
+| RR turnaround: 282.19994413312304 
+| RR wait: 156.44994413312253 
++--------------------------------------------+
