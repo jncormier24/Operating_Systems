@@ -1,0 +1,21 @@
+\documentclass[12pt]{amsart}
+\usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
+\geometry{a4paper} % or letter or a5paper or ... etc
+
+\begin{document}
+Finish off 9.3 to get into more details of the UNIX scheduling strategies. Explain and compare what is going on in Figure 9.17 with Figure 9.16. \\
+The two major differences between what's happening in Figure 9.16 and figure 9.17 is the in 9.17 the system is using a round robin scheduling scheme, and takes into account user input. \\
+
+Problem 9.11 \\ 
+\begin{enumerate}
+	\item[a] Because there are two pointers pointing at the same process, the process will get twice the attention
+	\item[b] The advantage to this scheme is that the more important jobs would get more attention
+	\item[c] Enable multiple quantums, assigned to different levels of priorities. \\
+	
+\end{enumerate}
+Problem 9.13 \\
+This is a reasonable policy because it ensures that no one process will hog all of the processor time.\\
+
+Problem 9.14 \\
+This strategy favors an I\/O bound process because and I\/O bound process is less processor intense.
+\end{document}
