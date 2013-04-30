@@ -4,18 +4,40 @@
 \geometry{a4paper} % or letter or a5paper or ... etc
 
 \begin{document}
-Problem 8.1\\
+Problem 8.1
+\begin{enumerate}
+\item[a] (VPN mod page\_size) + ( PFN * page\_size )
+\item[b] address:
+\begin{enumerate}
+\item[i] 7196 
+\item[ii] page fault
+\item[iii] 379
+\end{enumerate}
+\end{enumerate}
 
-(pp. 11) Go over the section on inverted page table mechanism, starting in pp. 353\\
+Paging system does have its weakness with internal segmentation being one of them. Study the subsection on a combined approach of mixing paging and segmentation, starting at pp. 357, and discuss what this approach is, why it is done, and how this approach could be implemented.\\
 
-Read through the rest of this subsection, particularly, check out the accompanying ßow chart (Fig. 8.8), the example (Fig. 8.9), and the associated demonstration contained in Fig. 8.10\\
+Problem 8.4
+\begin{enumerate}
+\item[FIFO] (7, , ), (7, 0, ), (7, 0, 1), (2, 0, 1), (2, 0, 1), (2, 3, 1), (2, 3, 0), (4, 3, 0), (4, 2, 0), (4, 2, 3), (0, 2, 3),  (0, 2, 3), (0, 2, 3) (8 page faults)
+\item[LRU] (7, , ), (7, 0, ), (7, 0, 1), (2, 0, 1), (2, 0, 1), (2, 0, 3), (2, 0, 3), (4, 0, 3), (4, 0, 2), (3, 0, 2), (3, 0, 2), (3, 0, 2), (3, 0, 2) (5 page faults)
+\item[Clock] (7, , ), (7, 0, ), (7, 0, 1), (2, 0, 1), (2, 0, 1), (2, 0, 3), (0, 0, 3), (0, 4, 3), (0, 4, 2), (3, 4, 2), (3, 0, 2),  (3, 0, 3), (2, 0, 3) (10 page faults)
+\item[OPT]  (7, , ), (7, 0, ), (7, 0, 1), (2, 0, 1), (2, 0, 1), (2, 0, 3), (0, 0, 3), (0, 4, 3), (0, 4, 2), (3, 4, 2), (3, 0, 2),  (3, 0, 3), (2, 0, 3) (8 page faults)
+\end{enumerate}
 
-Paging system does have its weakness with internal segmentation being one of them. Study the subsection on a combined approach of mixing paging and segmentation, starting at pp. 362, and discuss what this approach is, why it is done, and how this approach could be implemented.\\
+Page 31 in Notes 
+\begin{enumerate}
+\item The working set with parameter $\Delta$ for a process at virtual time t, which we designate as W(t, $\Delta$), is the set of pages of that process that have been referenced in the last $\Delta$ virtual time units.
+\item This policy is useful because it keeps track of all the pages that have been referenced within a certain time frame, meaning that they will not have to be re-accessed if they are needed again.
+\item This question doesn't make any sense...
+\item 
+\end{enumerate}
 
-Problem 8.4\\
-
-Page 31 in Notes \\
-
-Problem 8.18\\
+Problem 8.18
+\begin{enumerate}
+\item[a] 5 bits for the address, 11 bits for the offset
+\item[b] length is 32, width is 9
+\item[c] if the physical memory were to be halved, the page size would also have to be halved, so the table size would reduce by 1.
+\end{enumerate}
 
 \end{document}
